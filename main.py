@@ -31,6 +31,9 @@ file_name = args.algorithm + "_alpha_" + str(args.alpha) +\
             str(args.num_episodes) + "_num_steps_" +\
             str(args.num_steps) + "_num_bins_" + str(args.num_bins)
 
+# print the file name
+print("The file name is: ", file_name)
+
 # define the environment
 env = gym.make('CartPole-v1')
 np.random.seed(args.seed)

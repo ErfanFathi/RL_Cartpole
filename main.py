@@ -1,13 +1,12 @@
 """
-Description: We want to implement q-learning algorithm and sarsa algorithm with epsilon-greedy policy
-                to solve the cartpole-v1 problem in gym.
+    @Description: This file is the main file for running the q-learning and sarsa algorithms on the cartpole-v1 environment.
+    @Author     : Erfan Fathi
+    @Date       : 26 May 2023
 """
 
 import gym
 import numpy as np
-import matplotlib.pyplot as plt
-from q_table import Qtable, discretize_state
-from policy import EpsilonGreedyPolicy
+from q_table import Qtable
 from q_agent import QLearner
 from sarsa_agent import SarasLearner
 from utils import plot_reward, render_and_save_frames
@@ -25,22 +24,44 @@ parser.add_argument('--num_bins', type=int, default=100, help='The number of bin
 parser.add_argument('--seed', type=int, default=100, help='The seed for the random number generator.')
 args = parser.parse_args()
 
-print("The arguments are: ", args)
+# create string for the file name
+file_name = args.algorithm + "_alpha_" + str(args.alpha) +\
+            "_gamma_" + str(args.gamma) + "_epsilon_" +\
+            str(args.epsilon) + "_num_episodes_" +\
+            str(args.num_episodes) + "_num_steps_" +\
+            str(args.num_steps) + "_num_bins_" + str(args.num_bins)
 
 # define the environment
 env = gym.make('CartPole-v1')
 np.random.seed(args.seed)
 
-# define the q-table
-q_table, bins = Qtable(env.observation_space, env.action_space, args.num_bins)
+if args.algorithm == "q_learning":
+    # define the q-table
+    q_table, bins = Qtable(env.observation_space, env.action_space, args.num_bins)
 
-# # instantiate the q-learner agent
-q_learner = QLearner(args.alpha, args.gamma, args.epsilon, q_table, bins, env, args.seed)
-# learn the q-table
-reward_list = q_learner.learn(args.num_episodes, args.num_steps)
+    # instantiate the q-learner agent
+    q_learner = QLearner(args.alpha, args.gamma, args.epsilon, q_table, bins, env, args.seed)
+    # learn the q-table
+    reward_list = q_learner.learn(args.num_episodes, args.num_steps)
 
-# plot
-plot_reward(reward_list, args.num_episodes, 100, "./plots/", "average_reward.png")
+    # plot
+    plot_reward(reward_list, args.num_episodes, 100, "./plots/", file_name + ".png")
 
-# render and save the frames
-render_and_save_frames(q_learner, bins, num_steps=100, num_episodes=10, path="./videos/", file_name="cartpole.gif")
+    # render and save the frames
+    render_and_save_frames(q_learner, bins, num_steps=100, num_episodes=10, path="./videos/", file_name=file_name + ".gif")
+elif args.algorithm == "sarsa":
+    # define the q-table
+    q_table, bins = Qtable(env.observation_space, env.action_space, args.num_bins)
+
+    # instantiate the q-learner agent
+    sarsa_learner = SarasLearner(args.alpha, args.gamma, args.epsilon, q_table, bins, env, args.seed)
+    # learn the q-table
+    reward_list = sarsa_learner.learn(args.num_episodes, args.num_steps)
+
+    # plot
+    plot_reward(reward_list, args.num_episodes, 100, "./plots/", file_name + ".png")
+
+    # render and save the frames
+    render_and_save_frames(sarsa_learner, bins, num_steps=100, num_episodes=10, path="./videos/", file_name=file_name + ".gif")
+else:
+    raise ValueError("The algorithm should be either q_learning or sarsa.")

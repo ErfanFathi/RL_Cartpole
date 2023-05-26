@@ -75,6 +75,7 @@ venv.bak/
 # Cython debug symbols
 cython_debug/
 
-# Ignore the runs in plots and videos folders
+# Ignore the runs in plots and videos and logs folders
 /plots/*
 /videos/*
+/logs/*

@@ -4,13 +4,13 @@
     @Date       : 26 May 2023
 """
 
+import argparse
 import gym
 import numpy as np
 from q_table import Qtable
 from q_agent import QLearner
 from sarsa_agent import SarasLearner
 from utils import plot_reward, render_and_save_frames
-import argparse
 
 # Get the arguments
 parser = argparse.ArgumentParser()

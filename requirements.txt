@@ -1,0 +1,6 @@
+gym==0.26.2
+gym-notices==0.0.8
+importlib-metadata==4.6.4
+numpy==1.24.3
+Pillow==9.0.1
+pygame==2.1.0

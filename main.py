@@ -12,6 +12,7 @@ from q_agent import QLearner
 from sarsa_agent import SarasLearner
 from utils import plot_reward, render_and_save_frames
 
+
 # Get the arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--algorithm', type=str, default='q_learning', help='The algorithm to use. It can be either q_learning or sarsa.')

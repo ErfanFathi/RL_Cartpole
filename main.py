@@ -49,7 +49,7 @@ if args.algorithm == "q_learning":
     reward_list = q_learner.learn(args.num_episodes, args.num_steps)
 
     # plot
-    plot_reward(reward_list, args.num_episodes, 100, "./plots/", file_name + ".png")
+    plot_reward(reward_list, args.num_episodes, 1000, "./plots/", file_name + ".png")
 
     # render and save the frames
     render_and_save_frames(q_learner, bins, num_steps=100, num_episodes=10, path="./videos/", file_name=file_name + ".gif")
@@ -63,7 +63,7 @@ elif args.algorithm == "sarsa":
     reward_list = sarsa_learner.learn(args.num_episodes, args.num_steps)
 
     # plot
-    plot_reward(reward_list, args.num_episodes, 100, "./plots/", file_name + ".png")
+    plot_reward(reward_list, args.num_episodes, 1000, "./plots/", file_name + ".png")
 
     # render and save the frames
     render_and_save_frames(sarsa_learner, bins, num_steps=100, num_episodes=10, path="./videos/", file_name=file_name + ".gif")

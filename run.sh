@@ -42,10 +42,10 @@ do
         do
             touch logs/sarsa_${alpha}_${gamma}_${epsilon}.txt
             # run the main.py file - sarsa algorithm
-            (python3 main.py --algorithm sarsa --alpha $alpha --gamma $gamma --epsilon $epsilon --num_episodes 70000 --num_steps 500 --num_bins 100 --seed 2)>>logs/sarsa_${alpha}_${gamma}_${epsilon}.txt
+            (python3 main.py --algorithm sarsa --alpha $alpha --gamma $gamma --epsilon $epsilon --num_episodes 10000 --num_steps 500 --num_bins 20 --seed 2)>>logs/sarsa_${alpha}_${gamma}_${epsilon}.txt
             echo "sarsa_${alpha}_${gamma}_${epsilon} done"
             # run the main.py file - q_learning algorithm
-            (python3 main.py --algorithm q_learning --alpha $alpha --gamma $gamma --epsilon $epsilon --num_episodes 70000 --num_steps 500 --num_bins 100 --seed 2)>>logs/q_learning_${alpha}_${gamma}_${epsilon}.txt
+            (python3 main.py --algorithm q_learning --alpha $alpha --gamma $gamma --epsilon $epsilon --num_episodes 10000 --num_steps 500 --num_bins 20 --seed 2)>>logs/q_learning_${alpha}_${gamma}_${epsilon}.txt
             echo "q_learning_${alpha}_${gamma}_${epsilon} done"
         done
     done

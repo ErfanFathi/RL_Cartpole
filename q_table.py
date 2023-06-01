@@ -25,8 +25,10 @@ def Qtable(state_space, action_space, bin_size=100):
     bins = np.zeros((state_space.shape[0], bin_size))
 
     # initialize the bins
-    for i in range(state_space.shape[0]):
-        bins[i] = np.linspace(state_space.low[i], state_space.high[i], bin_size)
+    bins[0] = np.linspace(-4.8, 4.8, bin_size)
+    bins[1] = np.linspace(-4, 4, bin_size)
+    bins[2] = np.linspace(-0.42, 0.42, bin_size)
+    bins[3] = np.linspace(-4, 4, bin_size)
 
     # define the q-table
     q_table = np.zeros((bin_size, bin_size, bin_size, bin_size, action_space.n))

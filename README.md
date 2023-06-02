@@ -10,13 +10,13 @@ This project implements the Q-learning and SARSA algorithms to solve the CartPol
   ```bash
     pip3 install -r requirements.txt
   ```
-- 3.Run the script with the desired parameters. Use the following command to see the available options:
+- 3. Run the script with the desired parameters. Use the following command to see the available options:
   ```bash
     python3 main.py --help
   ```  
     This script uses command-line arguments to configure the learning parameters and other settings. You can specify the following options:
     
-    - `--algorithm`: The algorithm to use for learning. Valid options are `q-learning` and `sarsa`. Default is `q-learning`.
+    - `--algorithm`: The algorithm to use for learning. Valid options are `q_learning` and `sarsa`. Default is `q_learning`.
     -  `--alpha`: The learning rate. Default is `0.1`.
     -  `--gamma`: The discount factor. Default is `0.995`.
     -  `--epsilon`: The probability of choosing a random action. Default is `0.1`.
@@ -27,13 +27,17 @@ This project implements the Q-learning and SARSA algorithms to solve the CartPol
    ```bash
     python3 main.py --algorithm q_learning --alpha 0.2 --gamma 0.99 --num_episodes 2000
    ```
+  
 - 4. The script will execute the chosen algorithm on the CartPole-v1 environment. It will print the name of the generated file containing the results.
+
 - 5. After the execution, a plot of the rewards obtained during the learning process will be saved in the `plots` directory as a PNG file.
+
 - 6. Additionally, frames of the agent's behavior will be rendered and saved as a GIF file in the `videos` directory. This provides a visual representation of the learned policy.
 
 ## Result
 <p align="center">
-<img src = "https://github.com/ErfanFathi/"</img>
+<img src = "https://github.com/ErfanFathi/RL_Project/blob/main/plots/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.png" width="480" height="300"</img>
+<img src = "https://github.com/ErfanFathi/RL_Project/blob/main/videos/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.gif" width="480" height="300"</img>
 </p>
 
 ## Finale

@@ -20,9 +20,9 @@ This project implements the Q-learning and SARSA algorithms to solve the CartPol
     -  `--alpha`: The learning rate. Default is `0.1`.
     -  `--gamma`: The discount factor. Default is `0.995`.
     -  `--epsilon`: The probability of choosing a random action. Default is `0.1`.
-    -  `--num-episodes`: The number of episodes to run. Default is `1000`.
-    -  `--num-steps`: The maximum number of steps per episode. Default is `500`.
-    -  `--num-bins`: The number of bins to use for discretizing the state space. Default is `20`.
+    -  `--num_episodes`: The number of episodes to run. Default is `1000`.
+    -  `--num_steps`: The maximum number of steps per episode. Default is `500`.
+    -  `--num_bins`: The number of bins to use for discretizing the state space. Default is `20`.
  - e.g.:
    ```bash
     python3 main.py --algorithm q_learning --alpha 0.2 --gamma 0.99 --num_episodes 2000

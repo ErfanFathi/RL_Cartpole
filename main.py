@@ -21,7 +21,7 @@ parser.add_argument('--gamma', type=float, default=0.995, help='The discount fac
 parser.add_argument('--epsilon', type=float, default=0.1, help='The exploration rate.')
 parser.add_argument('--num_episodes', type=int, default=1000, help='The number of episodes.')
 parser.add_argument('--num_steps', type=int, default=500, help='The number of steps.')
-parser.add_argument('--num_bins', type=int, default=100, help='The number of bins for discretizing the state space.')
+parser.add_argument('--num_bins', type=int, default=20, help='The number of bins for discretizing the state space.')
 parser.add_argument('--seed', type=int, default=100, help='The seed for the random number generator.')
 args = parser.parse_args()
 

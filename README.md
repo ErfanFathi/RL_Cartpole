@@ -4,7 +4,7 @@ This project implements the Q-learning and SARSA algorithms to solve the CartPol
 ## Usage
 - 1. Clone the repository or download the source code files.
   ```bash
-    git clone git@github.com:ErfanFathi/RL_Project.git
+    git clone git@github.com:ErfanFathi/RL_Cartpole.git
   ```
 - 2. Install the required packages.
   ```bash
@@ -36,8 +36,8 @@ This project implements the Q-learning and SARSA algorithms to solve the CartPol
 
 ## Result
 <p align="center">
-<img src = "https://github.com/ErfanFathi/RL_Project/blob/main/plots/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.png" width="400" height="300"</img>
-<img src = "https://github.com/ErfanFathi/RL_Project/blob/main/videos/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.gif" width="400" height="300"</img>
+<img src = "https://github.com/ErfanFathi/RL_Cartpole/blob/main/plots/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.png" width="400" height="300"</img>
+<img src = "https://github.com/ErfanFathi/RL_Cartpole/blob/main/videos/q_learning_alpha_0.2_gamma_0.995_epsilon_0.2_num_episodes_10000_num_steps_500_num_bins_20.gif" width="400" height="300"</img>
 </p>
 
 ## Finale

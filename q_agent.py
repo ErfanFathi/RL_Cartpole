@@ -89,7 +89,7 @@ class QLearner:
                 # update the total reward
                 total_reward += reward
                 # check if the episode is finished
-                if done:
+                if done or step == num_steps - 1:
                     # print the total reward
                     print("Episode: {}/{}, Total Reward: {}".format(episode + 1, num_episodes, total_reward))
                     # append the total reward

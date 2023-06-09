@@ -1,4 +1,4 @@
-gym[classic_control]
+gym[classic_control]==0.26.2
 numpy
 Pillow==9.0.1
 pygame==2.1.0
